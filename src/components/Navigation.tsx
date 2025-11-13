@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { useAuth } from '@/contexts/AuthContext';
-import { Shield, LayoutDashboard, Settings, FileText, LogOut, User } from 'lucide-react';
+import { Shield, LayoutDashboard, Settings, FileText, LogOut, User, Target, AlertTriangle, Bug } from 'lucide-react';
 
 const Navigation = () => {
   const { user, logout } = useAuth();
@@ -11,6 +11,10 @@ const Navigation = () => {
     { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { to: '/firewall', icon: Settings, label: 'Firewall' },
     { to: '/logs', icon: FileText, label: 'Logs' },
+    { to: '/signatures', icon: Shield, label: 'Signatures' },
+    { to: '/patterns', icon: Target, label: 'IOCs' },
+    { to: '/incidents', icon: AlertTriangle, label: 'Incidents' },
+    { to: '/vulnerabilities', icon: Bug, label: 'CVEs' },
   ];
 
   return (
